@@ -11,7 +11,7 @@
   color-mix(in srgb, var(--secondary-color), black 10%) 51%,
   var(--secondary-color) 100%);
   /* You can customize the background image here */
-  --bg-image: url(/image/bg.jpg);
+  --bg-image: url('../image/bg.jpg');
 }
 
 body {
@@ -323,6 +323,124 @@ nav {
   box-shadow: 0 0 0 0.5px var(--black-main), 0 0 0 1.5px var(--white-main);
 }
 
+/* Friends page rectangular box and list styles */
+.friends-box {
+  border-radius: 0; /* make rectangular */
+  padding: 0; /* use internal post-content padding */
+}
+
+.friends-content {
+  padding: 20px;
+  background-color: var(--white-main);
+  box-shadow: 0 0 0 0.5px var(--black-main), 0 0 0 1.5px var(--white-main);
+}
+
+.friends-content ul {
+  list-style: disc;
+  padding-left: 28px;
+}
+
+.friends-content ul li {
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.friends-content ul li:last-child {
+  border-bottom: none;
+}
+
+/* Card grid for friends */
+.friends-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.friend-card {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 200px;
+  width: 220px;
+  height: 220px; /* make square */
+  background: rgba(30, 30, 30, 0.95);
+  background-size: cover;
+  background-position: center;
+  border-radius: 14px;
+  padding: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  color: #f3f3f3;
+}
+
+.friend-left {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.friend-avatar img {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 8px; /* rounded square */
+  border: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.friend-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.friend-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white-main);
+}
+
+.friend-desc {
+  margin-top: 6px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  line-height: 1.3;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.friend-visit {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white-main);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+@media (max-width: 900px) {
+  .friend-card {
+    flex: 1 1 calc(50% - 20px);
+    width: 180px;
+    height: 180px;
+  }
+}
+@media (max-width: 560px) {
+  .friend-card {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 140px;
+  }
+  .friend-card {
+    flex-direction: row;
+  }
+}
 .rm-link {
   position: relative;
   width: 120px;
